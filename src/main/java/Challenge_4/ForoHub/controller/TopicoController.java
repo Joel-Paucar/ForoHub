@@ -3,6 +3,7 @@ package Challenge_4.ForoHub.controller;
 import Challenge_4.ForoHub.domain.topico.DatosActualizarTopicos;
 import Challenge_4.ForoHub.domain.topico.DatosRegistroTopicos;
 import Challenge_4.ForoHub.domain.topico.OperacionesTopico;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
     @Autowired
     private OperacionesTopico operaciones;
